@@ -1,0 +1,41 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: hsl(145, 63%, 49%);
+    --background-color: #1e1e1e;
+    --text-color: #f1f1f1;
+}
+
+@font-face {
+    font-family: 'Roboto_Mono';
+    src: url('fonts/Roboto_Mono/static/RobotoMono-Regular.ttf') format('truetype');
+}
+
+
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Roboto_Mono', sans-serif;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.tcolor{
+    color: var(--text-color);
+}
+
+.blurred-text-shadow {
+    color: transparent;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 
+                 0 0 10px rgba(0, 0, 0, 0.5), 
+                 0 0 15px rgba(0, 0, 0, 0.5), 
+                 0 0 20px rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+}
+
+.blurred-text-filter {
+    filter: blur(5px);
+    font-size: 2em;
+    color: black;
+}
