@@ -1,21 +1,18 @@
 
 LASTPOS = 'ss';
 
-BASEPATHEYS = 'res/img/'
+BASEPATH = 'res/img/'
 
-SS = 'SS.png';
-ST = 'ST.png';
-SB = 'SB.png';
-SL = 'SL.png';
-SR = 'SR.png';
-LT = 'LT.png';
-LB = 'LB.png';
-RT = 'RT.png';
-RB = 'RB.png';
+POS0 = 'cctv_pos0.png';
+POS1 = 'cctv_pos1.png';
+POS2 = 'cctv_pos2.png';
+POS3 = 'cctv_pos3.png';
+POS4 = 'cctv_pos4.png';
+
 
 function checkRelativeCursorPos(x, y) {
-    const fru1t = document.getElementById('fru1timg');
-    const rect = fru1t.getBoundingClientRect();
+    const usrmimg = document.getElementById('usrmimg');
+    const rect = usrmimg.getBoundingClientRect();
     var pos = '';
 
     if (x < rect.left) pos += 'l';
@@ -32,40 +29,32 @@ function checkRelativeCursorPos(x, y) {
 function changeEyeSbyPos(pos) {
     const fru1timg = document.getElementById('fru1timg');
 
-    var path = BASEPATHEYS;
+    var path = BASEPAT;
     switch (pos) {
         case 'st':
-            path += ST;
+            path += POS0;
             break;
         case 'sb':
-            path += SB;
+            path += POS1;
             break;
         case 'ls':
-            path += SL;
+            path += POS2;
             break;
         case 'rs':
-            path += SR;
+            path += POS3;
             break;
         case 'lt':
-            path += LT;
-            break;
-        case 'lb':
-            path += LB;
-            break;
-        case 'rt':
-            path += RT;
-            break;
-        case 'rb':
-            path += RB;
+            path += POS4;
             break;
         default:
-            path += SS;
+            path += POS0;
             break;
     }
     fru1timg.src = path;
 }
 
 document.addEventListener('mousemove', (event) => {
-    //var pos = checkRelativeCursorPos(event.clientX, event.clientY);
+    var pos = checkRelativeCursorPos(event.clientX, event.clientY);
+    console.log(pos);
     //changeEyeSbyPos(pos);
 });

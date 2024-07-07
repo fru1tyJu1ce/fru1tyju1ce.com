@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'Roboto_Mono';
-    src: url('fonts/Roboto_Mono/static/RobotoMono-Regular.ttf') format('truetype');
+    src: url('../res/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf') format('truetype');
 }
 
 
@@ -38,4 +38,12 @@ body {
     filter: blur(5px);
     font-size: 2em;
     color: black;
+}
+
+.usrimg{
+    width: 10em;
+}
+
+.cctvimg{
+    width: 7em;
 }
