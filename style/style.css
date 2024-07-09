@@ -1,9 +1,12 @@
 :root {
     --primary-color: #3498db;
-    --secondary-color: hsl(145, 63%, 49%);
+    --secondary-color: #3e3e42	;
     --background-color: #1e1e1e;
+    --secondary-bg-color: #2d2d30;
     --text-color: #f1f1f1;
+    --border-color: #f1f1f182;
 }
+/* https://www.color-hex.com/color-palette/98179 */
 
 @font-face {
     font-family: 'Roboto_Mono';
@@ -14,6 +17,8 @@
 body {
     background-color: var(--background-color);
     font-family: 'Roboto_Mono', sans-serif;
+    font-size: small;
+
 }
 
 .transparent {
@@ -45,4 +50,32 @@ body {
 
 .cctvimg{
     width: 7em;
+}
+
+.tech-stack {
+    border-color:  var(--border-color);
+    border-width: 1px;
+    background-color: transparent;
+    color: white;
+}
+
+.tech-stack .card-header {
+    background-color: transparent;
+    border-color:  var(--border-color);
+}
+
+.tech-stack .card-body {
+    background-color:  var( --secondary-bg-color);
+}
+
+.tech-stack .list-group-item {
+    color: white;
+    border-width: 1px;
+    background-color:  var( --secondary-bg-color);
+}
+
+.tech-stack .titel-ts {
+    color: var(--text-color);;
+    border-width: 1px;
+    background-color:  var( --secondary-bg-color);
 }
