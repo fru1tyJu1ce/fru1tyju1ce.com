@@ -1,11 +1,12 @@
 :root {
     --primary-color: #3498db;
-    --secondary-color: #3e3e42	;
+    --secondary-color: #3e3e42;
     --background-color: #1e1e1e;
     --secondary-bg-color: #2d2d30;
     --text-color: #f1f1f1;
     --border-color: #f1f1f182;
 }
+
 /* https://www.color-hex.com/color-palette/98179 */
 
 @font-face {
@@ -25,16 +26,16 @@ body {
     background-color: transparent;
 }
 
-.tcolor{
+.tcolor {
     color: var(--text-color);
 }
 
 .blurred-text-shadow {
     color: transparent;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5), 
-                 0 0 10px rgba(0, 0, 0, 0.5), 
-                 0 0 15px rgba(0, 0, 0, 0.5), 
-                 0 0 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5),
+        0 0 10px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(0, 0, 0, 0.5);
     font-size: 2em;
 }
 
@@ -44,16 +45,13 @@ body {
     color: black;
 }
 
-.usrimg{
+.usrimg {
     width: 14em;
 }
 
-.cctvimg{
-    width: 7em;
-}
 
 .tech-stack {
-    border-color:  var(--border-color);
+    border-color: var(--border-color);
     border-width: 1px;
     background-color: transparent;
     color: var(--text-color);
@@ -61,22 +59,31 @@ body {
 
 .tech-stack .card-header {
     background-color: transparent;
-    border-color:  var(--border-color);
+    border-color: var(--border-color);
 }
 
 .tech-stack .card-body {
-    background-color:  transparent;
+    background-color: transparent;
+    overflow: scroll;
+}
+
+.tech-stack .card-body h6 {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tech-stack .card-body p {
+    font-size: 12px;
 }
 
 .tech-stack .list-group-item {
     color: var(--text-color);
     border-width: 0px;
-    border-color: aqua;
-    background-color:  var( --secondary-bg-color);
+    background-color: var(--secondary-bg-color);
+    font-size: 11px;
 }
 
-.titel-ts{
-    font-weight: bolder;
-    width: 150px;
+.titel-ts {
+    font-weight: 500;
+    width: 134px;
 }
-
