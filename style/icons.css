@@ -1,0 +1,9 @@
+.icon-ionic {
+    background: url('/res/icons/logo-ionic.svg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: inline-block;
+    height: 17px;
+    width: 17px;
+    filter: invert(1);
+}
