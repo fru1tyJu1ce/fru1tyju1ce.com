@@ -40,15 +40,22 @@ body {
 }
 
 .blurred-text-filter {
-    filter: blur(5px);
-    font-size: 2em;
-    color: black;
+    filter: blur(1px);
+    color: var(--text-color);
 }
 
 .usrimg {
-    width: 14em;
+    width: 15em;
 }
 
+
+.info-box .list-group-item {
+    min-width: 270px;
+    color: var(--text-color);
+    border-width: 0px;
+    background-color: transparent;
+    font-size: 14px;
+}
 
 .tech-stack {
     border-color: var(--border-color);
