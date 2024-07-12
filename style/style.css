@@ -31,38 +31,33 @@ body {
 }
 
 .info-box .list-group-item {
-    min-width: 270px;
+    min-width: 24em;
     color: var(--text-color);
     border-width: 0px;
     background-color: transparent;
-    font-size: 12px;
+    font-size: 0.88em;
 }
 
-.window-controls {
-    display: flex;
-    gap: 8px; /* Space between circles */
-  }
-  .control-circle {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-  .red { background-color: #ff605c; }
-  .yellow { background-color: #ffbd44; }
-  .green { background-color: #00ca56; }
 
-.terminal {
-    max-width: 42em;
-    height: 24em;
 
+
+.terminal{
+    font-family: 'Roboto_Mono';
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #0fa,
+        0 0 42px #0fa;
+    font-size: 0.7em;
+    font-weight:lighter;
+    border-color: var(--border-color);
+    border-width: 1px;
+    background-color:transparent;
+    width: 60em;
+    height: 32em;
 }
 
-.terminal .card-header {
-    background-color: #2d2b2b;
-}
-.terminal .card-body {
-    background-color: #101010;
-}
 
 .tech-stack {
     border-color: var(--border-color);
@@ -83,18 +78,18 @@ body {
 }
 
 .tech-stack .card-body h6 {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 1.1em;
+    font-weight: normal;
 }
 
 .tech-stack .card-body p {
-    font-size: 12px;
+    font-size: 0.8em;
 }
 
 .tech-stack .list-group-item {
     color: var(--text-color);
     background-color: var(--secondary-bg-color);
-    font-size: 11px;
+    font-size: 0.8em;
 }
 
 .tech-stack .tech-stack-elem:hover {
@@ -109,5 +104,5 @@ body {
 
 .titel-ts {
     font-weight: 500;
-    width: 134px;
+    width: 12.7em;
 }

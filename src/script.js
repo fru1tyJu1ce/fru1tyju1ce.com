@@ -1,3 +1,4 @@
+//MOVING EYES
 
 LASTPOS = 'ss';
 
@@ -84,3 +85,44 @@ document.addEventListener('mousemove', (event) => {
     changeEyeSbyPos(pos);
 });
 
+
+// TERMINAL 
+
+function typeToterminal(str, delay, textareaId = 'terminal') {
+    let i = 0;
+    const area = document.getElementById(textareaId);
+    if (!area) {
+        console.error('Textarea with specified ID not found.');
+        return;
+    }
+    
+    const intervalId = setInterval(() => {
+        if (i < str.length) {
+            area.value += str[i];
+            i++;
+        } else {
+            clearInterval(intervalId);
+        }
+    }, delay );
+}
+
+let multilineString = `          Vadim@crck-mini ~ % neofetch
+'c.          Vadim@crck-mini.local 
+,xNMM.          --------------------- 
+.OMMMMo           OS: macOS 14.5 23F79 arm64 
+OMMM0,            Host: Mac14,3 
+.;loddo:' loolloddol;.      Kernel: 23.5.0 
+cKMMMMMMMMMMNWMMMMMMMMMM0:    Uptime: 1 day, 3 hours, 19 mins 
+.KMMMMMMMMMMMMMMMMMMMMMMMWd.    Packages: 48 (brew) 
+XMMMMMMMMMMMMMMMMMMMMMMMX.      Shell: zsh 5.9 
+;MMMMMMMMMMMMMMMMMMMMMMMM:       Resolution: 1920x1080, 1920x1080 
+:MMMMMMMMMMMMMMMMMMMMMMMM:       DE: Aqua 
+.MMMMMMMMMMMMMMMMMMMMMMMMX.      WM: Quartz Compositor 
+kMMMMMMMMMMMMMMMMMMMMMMMMWd.    WM Theme: Blue (Dark) 
+.XMMMMMMMMMMMMMMMMMMMMMMMMMMk   Terminal: Apple_Terminal 
+.XMMMMMMMMMMMMMMMMMMMMMMMMK.   Terminal Font: AndaleMono 
+kMMMMMMMMMMMMMMMMMMMMMMd     CPU: Apple M2 
+;KMMMMMMMWXXWMMMMMMMk.      GPU: Apple M2 
+.cooc,.    .,coo:.        Memory: 1447MiB / 8192MiB   `
+
+typeToterminal(multilineString, 2);
