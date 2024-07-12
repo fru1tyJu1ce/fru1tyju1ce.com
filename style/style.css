@@ -22,39 +22,46 @@ body {
 
 }
 
-.transparent {
-    background-color: transparent;
-}
-
-.tcolor {
-    color: var(--text-color);
-}
-
-.blurred-text-shadow {
-    color: transparent;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5),
-        0 0 10px rgba(0, 0, 0, 0.5),
-        0 0 15px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(0, 0, 0, 0.5);
-    font-size: 2em;
-}
-
-.blurred-text-filter {
-    filter: blur(1px);
-    color: var(--text-color);
+.placeholder1 {
+    max-width: 10em;
 }
 
 .usrimg {
     width: 15em;
 }
 
-
 .info-box .list-group-item {
     min-width: 270px;
     color: var(--text-color);
     border-width: 0px;
     background-color: transparent;
-    font-size: 14px;
+    font-size: 12px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px; /* Space between circles */
+  }
+  .control-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .red { background-color: #ff605c; }
+  .yellow { background-color: #ffbd44; }
+  .green { background-color: #00ca56; }
+
+.terminal {
+    max-width: 42em;
+    height: 24em;
+
+}
+
+.terminal .card-header {
+    background-color: #2d2b2b;
+}
+.terminal .card-body {
+    background-color: #101010;
 }
 
 .tech-stack {
@@ -62,7 +69,7 @@ body {
     border-width: 1px;
     background-color: transparent;
     color: var(--text-color);
-    max-width: 57em;
+    max-width: 64em;
 }
 
 .tech-stack .card-header {
@@ -86,9 +93,18 @@ body {
 
 .tech-stack .list-group-item {
     color: var(--text-color);
-    border-width: 0px;
     background-color: var(--secondary-bg-color);
     font-size: 11px;
+}
+
+.tech-stack .list-group-item:hover {
+    background-color:var(--secondary-color);
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #0fa,
+        0 0 42px #0fa;
 }
 
 .titel-ts {
