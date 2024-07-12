@@ -27,7 +27,7 @@ body {
 }
 
 .usrimg {
-    width: 15em;
+    width: 14em;
 }
 
 .info-box .list-group-item {
@@ -51,11 +51,13 @@ body {
         0 0 42px #0fa;
     font-size: 0.7em;
     font-weight:lighter;
+    letter-spacing: 0.2em;
     border-color: var(--border-color);
     border-width: 1px;
     background-color:transparent;
     width: 60em;
     height: 32em;
+    overflow: hidden;
 }
 
 
