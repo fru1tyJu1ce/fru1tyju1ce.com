@@ -2,7 +2,7 @@
 
 LASTPOS = 'ss';
 
-BASEPATH = './res/img/';
+BASEPATH = './res/img/usrimg/';
 
 ZZ = 'ZZ.png';
 SS = 'SS.png';
