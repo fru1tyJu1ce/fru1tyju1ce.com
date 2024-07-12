@@ -2,7 +2,7 @@
 
 LASTPOS = 'ss';
 
-BASEPATH = '/res/img/usrimg_dynamic/';
+BASEPATH = './res/img/usrimg_dynamic/';
 
 ZZ = 'ZZ.png';
 SS = 'SS.png';
