@@ -97,7 +97,7 @@ body {
     font-size: 11px;
 }
 
-.tech-stack .list-group-item:hover {
+.tech-stack .tech-stack-elem:hover {
     background-color:var(--secondary-color);
     color: #fff;
     text-shadow:
