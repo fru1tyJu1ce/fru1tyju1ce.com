@@ -1,5 +1,5 @@
 .icon-ionic {
-    background: url(../res/icons/logo-ionic.svg);
+    background: url(/res/icons/logo-ionic.svg);
     background-repeat: no-repeat;
     background-size: cover; 
     display: inline-block;
@@ -9,7 +9,7 @@
 }
 
 .icon-pocketbase {
-    background: url(../res/icons/pocketbase_logo_icon_248816.svg);
+    background: url(/res/icons/pocketbase_logo_icon_248816.svg);
     background-repeat: no-repeat;
     background-size: cover; 
     display: inline-block;
