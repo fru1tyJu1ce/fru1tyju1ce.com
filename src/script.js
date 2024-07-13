@@ -24,7 +24,7 @@ function checkRelativeCursorPos(x, y) {
     else if (x > rect.right) pos += 'R';
     else pos += 'S';
 
-    if (y < rect.top) pos += 't';
+    if (y < rect.top) pos += 'T';
     else if (y > rect.bottom) pos += 'B';
     else pos += 'S';
 
