@@ -2,18 +2,7 @@
 
 LASTPOS = 'ss';
 
-BASEPATH = './res/img/';
-
-ZZ = 'ZZ.png';
-SS = 'usrimg.png';
-ST = 'ST.png';
-SB = 'SB.png';
-SL = 'SL.png';
-SR = 'SR.png';
-LT = 'LT.png';
-LB = 'LB.png';
-RT = 'RT.png';
-RB = 'RB.png';
+BASEPATH = './res/img/usrimg/';
 
 
 function checkRelativeCursorPos(x, y) {
@@ -21,63 +10,30 @@ function checkRelativeCursorPos(x, y) {
     const rect = usrimg.getBoundingClientRect();
     var pos = '';
 
+    /*
     console.log('x: ' + x + ' y: ' + y)
     console.log('r: ' + rect.right + ' l: ' + rect.left)
     console.log('t: ' + rect.top + ' b: ' + rect.bottom)
-
+    */
 
     if (x < rect.right - (rect.width / 3) && x > rect.left + (rect.width / 3) && y > rect.top + (rect.height / 3) && y < rect.bottom - (rect.width / 3)) {
-        return 'zz';
+        return 'ZZ';
     }
 
-    if (x < rect.left) pos += 'l';
-    else if (x > rect.right) pos += 'r';
-    else pos += 's';
+    if (x < rect.left) pos += 'L';
+    else if (x > rect.right) pos += 'R';
+    else pos += 'S';
 
     if (y < rect.top) pos += 't';
-    else if (y > rect.bottom) pos += 'b';
-    else pos += 's';
+    else if (y > rect.bottom) pos += 'B';
+    else pos += 'S';
 
     return pos;
 }
 
 function changeEyeSbyPos(pos) {
     const usrimg = document.getElementById('usrimg');
-
-    var path = BASEPATH;
-    switch (pos) {
-        case 'zz':
-            path += ZZ;
-            break;
-        case 'st':
-            path += ST;
-            break;
-        case 'sb':
-            path += SB;
-            break;
-        case 'ls':
-            path += SL;
-            break;
-        case 'rs':
-            path += SR;
-            break;
-        case 'lt':
-            path += LT;
-            break;
-        case 'lb':
-            path += LB;
-            break;
-        case 'rt':
-            path += RT;
-            break;
-        case 'rb':
-            path += RB;
-            break;
-        default:
-            path += SS;
-            break;
-    }
-    usrimg.src = path;
+    usrimg.src = BASEPATH + pos + '.png';
 }
 
 document.addEventListener('mousemove', (event) => {
@@ -106,17 +62,17 @@ function typeToterminal(str, delay, textareaId = 'terminal') {
     }, delay );
 }
 
-let multilineString = 
+let neofetchStr = 
 `
-                    'c.          Vadim@crck-mini.local 
+                    'c.          user@crck-mini.local 
                  ,xNMM.          --------------------- 
                .OMMMMo           OS: macOS 14.5 23F79 arm64 
                OMMM0,            Host: Mac14,3 
      .;loddo:' loolloddol;.      Kernel: 23.5.0 
-   cKMMMMMMMMMMNWMMMMMMMMMM0:    Uptime: 1 day, 3 hours, 19 mins 
+   cKMMMMMMMMMMNWMMMMMMMMMM0:    Uptime: 69 days, 4 hours, 19 mins 
  .KMMMMMMMMMMMMMMMMMMMMMMMWd.    Packages: 48 (brew) 
  XMMMMMMMMMMMMMMMMMMMMMMMX.      Shell: zsh 5.9 
-;MMMMMMMMMMMMMMMMMMMMMMMM:       Resolution: 1920x1080, 1920x1080 
+;MMMMMMMMMMMMMMMMMMMMMMMM:       Resolution: 4096x2304, 4096x2304 
 :MMMMMMMMMMMMMMMMMMMMMMMM:       DE: Aqua 
 .MMMMMMMMMMMMMMMMMMMMMMMMX.      WM: Quartz Compositor 
  kMMMMMMMMMMMMMMMMMMMMMMMMWd.    WM Theme: Blue (Dark) 
@@ -124,7 +80,7 @@ let multilineString =
   .XMMMMMMMMMMMMMMMMMMMMMMMMK.   Terminal Font: AndaleMono 
     kMMMMMMMMMMMMMMMMMMMMMMd     CPU: Apple M2 
      ;KMMMMMMMWXXWMMMMMMMk.      GPU: Apple M2 
-       .cooc,.    .,coo:.        Memory: 1447MiB / 8192MiB
+       .cooc,.    .,coo:.        Memory: 1447MiB / 16192MiB
 `
 
-typeToterminal(multilineString, 2);
+typeToterminal(neofetchStr, 1);

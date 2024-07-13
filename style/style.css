@@ -42,6 +42,7 @@ body {
 
 
 .terminal{
+    resize: none;
     font-family: 'Roboto_Mono';
     color: #fff;
     text-shadow:
@@ -51,13 +52,17 @@ body {
         0 0 42px #0fa;
     font-size: 0.7em;
     font-weight:lighter;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     border-color: var(--border-color);
     border-width: 1px;
     background-color:transparent;
     width: 60em;
     height: 32em;
     overflow: hidden;
+}
+
+.terminal:focus{
+    outline: none;
 }
 
 
