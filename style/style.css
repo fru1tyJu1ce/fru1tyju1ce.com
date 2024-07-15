@@ -43,6 +43,7 @@ body {
 
 
 .terminal{
+    display: none;
     resize: none;
     font-family: 'Roboto_Mono';
     color: #fff;
@@ -100,6 +101,7 @@ body {
     font-size: 0.8em;
 }
 
+/*
 .tech-stack .tech-stack-elem:hover {
     background-color:var(--secondary-color);
     color: #fff;
@@ -114,8 +116,15 @@ body {
     font-weight: 500;
     width: 12.7em;
 }
+*/
+
+.info-link{
+    color: var(--text-color);
+    text-decoration: none;
+}
 
 .footer {
+    display: none;
     padding: 10px 0;
     background-color: var(--secondary-background-color);
     border-top: 1px solid var(--border-color);
