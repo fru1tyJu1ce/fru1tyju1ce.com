@@ -4,6 +4,7 @@
     --background-color: #1e1e1e;
     --secondary-bg-color: #2d2d30;
     --text-color: #f1f1f1;
+    --text-color-alt: #bbbbbb;
     --border-color: #f1f1f182;
 }
 
@@ -113,3 +114,17 @@ body {
     font-weight: 500;
     width: 12.7em;
 }
+
+.footer {
+    padding: 10px 0;
+    background-color: var(--secondary-background-color);
+    border-top: 1px solid var(--border-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+  }
+
+  .footer-txt a, p {
+    color: var(--text-color-alt);
+  }
