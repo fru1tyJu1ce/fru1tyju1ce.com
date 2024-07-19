@@ -41,6 +41,47 @@ document.addEventListener('mousemove', (event) => {
     changeEyeSbyPos(pos);
 });
 
+// CHART
+
+var options = {
+    chart: {
+        type: 'radar'
+    },
+    series: [{
+        name: 'sales',
+        data: [30, 40, 45, 50, 49, 60, 70, 91, 125]
+    }],
+    xaxis: {
+        categories: ['Development', 'Dev Ops', 'Systems engineering', 'Management'],
+        labels: {
+            show: true,
+            style: {
+            colors: ["#a8a8a8"],
+            fontSize: "11px",
+            fontFamily: 'Arial'
+            }
+        }
+    }
+}
+
+/*
+options = {
+  series: [
+    {
+      name: "Radar Series 1",
+      data: [45, 52, 38, 24, 33, 10]
+    },
+    {
+      name: "Radar Series 2",
+      data: [26, 21, 20, 6, 8, 15]
+    }
+  ],
+  labels: ['April', 'May', 'June', 'July', 'August', 'September']
+}
+*/
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+chart.render();
 
 // TERMINAL 
 
@@ -51,7 +92,7 @@ function typeToterminal(str, delay, textareaId = 'terminal') {
         console.error('Textarea with specified ID not found.');
         return;
     }
-    
+
     const intervalId = setInterval(() => {
         if (i < str.length) {
             area.value += str[i];
@@ -59,7 +100,7 @@ function typeToterminal(str, delay, textareaId = 'terminal') {
         } else {
             clearInterval(intervalId);
         }
-    }, delay );
+    }, delay);
 }
 
 function typeToterminal(str, delay, textareaId = 'terminal') {
@@ -69,7 +110,7 @@ function typeToterminal(str, delay, textareaId = 'terminal') {
         console.error('Textarea with specified ID not found.');
         return;
     }
-    
+
     const intervalId = setInterval(() => {
         if (i < str.length) {
             area.value += str[i];
@@ -77,18 +118,18 @@ function typeToterminal(str, delay, textareaId = 'terminal') {
         } else {
             clearInterval(intervalId);
         }
-    }, delay );
+    }, delay);
 }
 
 function renderToterminal(str, delay, textareaId = 'terminal') {
-    let lines = str.split('\n'); 
+    let lines = str.split('\n');
     let currentLine = 0;
     const area = document.getElementById(textareaId);
     if (!area) {
         console.error('Textarea with specified ID not found.');
         return;
     }
-    
+
     const intervalId = setInterval(() => {
         if (currentLine < lines.length) {
             area.value += lines[currentLine] + '\n';
@@ -99,8 +140,8 @@ function renderToterminal(str, delay, textareaId = 'terminal') {
     }, delay);
 }
 
-let neofetchStr = 
-`
+let neofetchStr =
+    `
                         'c.          user@crck-mini.local 
                     ,xNMM.          --------------------- 
                 .OMMMMo           OS: macOS 14.5 23F79 arm64 
@@ -120,8 +161,8 @@ let neofetchStr =
         .cooc,.    .,coo:.        Memory: 1447MiB / 16192MiB
 `
 
-let cpp = 
-`
+let cpp =
+    `
     ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░  
     ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
     ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
