@@ -1,8 +1,10 @@
 // Load dark/light mode
 
+//https://encycolorpedia.de/f6f3ed
+
 const link = document.createElement('link');
 link.setAttribute('rel', 'stylesheet');
-link.setAttribute('href', 'style/dark.css');
+link.setAttribute('href', 'style/light.css');
 
 
 document.head.appendChild(link);
