@@ -41,21 +41,26 @@ body {
 }
 
 .tech-stack {
-    max-width: 64em;
+    max-width: 54em;
 }
 
 .tech-stack .card-body h6 {
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight: normal;
 }
 
 .tech-stack .card-body p {
-    font-size: 0.7em;
+    font-size: 0.9em;
 }
 
 .tech-stack .list-group-item {
-    font-size: 0.7em;
+    font-size: 0.8em;
 }
+
+.tech-stack .list-group-item i{
+   margin-top: 6px;
+}
+
 
 .footer {
     display: none;
