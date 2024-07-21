@@ -1,0 +1,60 @@
+
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #3e3e42;
+    --background-color: #1e1e1e;
+    --secondary-bg-color: #2d2d30;
+    --text-color: #f1f1f1;
+    --text-color-alt: #bbbbbb;
+    --border-color: #f1f1f182;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.info-box .list-group-item {
+    color: var(--text-color);
+    background-color: transparent;
+}
+
+.terminal {
+    color: #fff;
+    background-color: transparent;
+    border-color: var(--border-color);
+}
+
+.tech-stack {
+    color: var(--text-color);
+    background-color: transparent;
+    border-color: var(--border-color);
+}
+
+.tech-stack .card-header {
+    background-color: transparent;
+    border-color: var(--border-color);
+}
+
+.tech-stack .card-body {
+    background-color: transparent;
+}
+
+.tech-stack .list-group-item {
+    color: var(--text-color);
+    background-color: var(--secondary-bg-color);
+}
+
+.info-link {
+    color: var(--text-color);
+}
+
+.footer {
+    background-color: var(--secondary-background-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-txt a, p {
+    color: var(--text-color-alt);
+}

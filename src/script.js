@@ -1,6 +1,15 @@
-//MOVING EYES
+// Load dark/light mode
 
-LASTPOS = 'ss';
+const link = document.createElement('link');
+link.setAttribute('rel', 'stylesheet');
+link.setAttribute('href', 'style/dark.css');
+
+
+document.head.appendChild(link);
+
+
+
+// MOVING EYES
 
 BASEPATH = './res/img/usrimg/';
 
@@ -43,26 +52,34 @@ document.addEventListener('mousemove', (event) => {
 
 // CHART
 
+
+
 var options = {
-    chart: {
-        type: 'radar'
-    },
     series: [{
-        name: 'sales',
-        data: [30, 40, 45, 50, 49, 60, 70, 91, 125]
+        name: '%',
+        data: [75, 90, 50, 30, 45],
+        
     }],
+    chart: {
+        height: 420,
+        type: 'radar',
+    },
+    title: {
+        text: ''
+    },
+    yaxis: {
+        stepSize: 100,
+        show: false  // Make sure it’s set to true
+    },
     xaxis: {
-        categories: ['Development', 'Dev Ops', 'Systems engineering', 'Management'],
-        labels: {
-            show: true,
-            style: {
-            colors: ["#a8a8a8"],
-            fontSize: "11px",
-            fontFamily: 'Arial'
-            }
-        }
+        categories: ['Native', 'Backend', 'Web/Frontend', 'Mobile', 'Embeddded']
     }
-}
+};
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
+
+
 
 /*
 options = {
@@ -79,9 +96,7 @@ options = {
   labels: ['April', 'May', 'June', 'July', 'August', 'September']
 }
 */
-var chart = new ApexCharts(document.querySelector("#chart"), options);
 
-chart.render();
 
 // TERMINAL 
 

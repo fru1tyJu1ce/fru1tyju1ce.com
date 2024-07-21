@@ -1,30 +1,11 @@
-:root {
-    --primary-color: #3498db;
-    --secondary-color: #3e3e42;
-    --background-color: #1e1e1e;
-    --secondary-bg-color: #2d2d30;
-    --text-color: #f1f1f1;
-    --text-color-alt: #bbbbbb;
-    --border-color: #f1f1f182;
-}
-
-/* https://www.color-hex.com/color-palette/98179 */
-
 @font-face {
     font-family: 'Roboto_Mono';
     src: url('../res/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf') format('truetype');
 }
 
-
 body {
-    background-color: var(--background-color);
     font-family: 'Roboto_Mono', sans-serif;
     font-size: small;
-
-}
-
-.placeholder1 {
-    max-width: 10em;
 }
 
 .usrimg {
@@ -33,57 +14,34 @@ body {
 
 .info-box .list-group-item {
     min-width: 24em;
-    color: var(--text-color);
     border-width: 0px;
-    background-color: transparent;
     font-size: 0.88em;
 }
 
-
-
-
-.terminal{
+.terminal {
     display: none;
     resize: none;
     font-family: 'Roboto_Mono';
-    color: #fff;
     text-shadow:
         0 0 7px #fff,
         0 0 10px #fff,
         0 0 21px #0fa,
         0 0 42px #0fa;
     font-size: 0.7em;
-    font-weight:lighter;
+    font-weight: lighter;
     letter-spacing: 0.1em;
-    border-color: var(--border-color);
     border-width: 1px;
-    background-color:transparent;
     width: 60em;
     height: 32em;
     overflow: hidden;
 }
 
-.terminal:focus{
+.terminal:focus {
     outline: none;
 }
 
-
 .tech-stack {
-    border-color: var(--border-color);
-    border-width: 1px;
-    background-color: transparent;
-    color: var(--text-color);
     max-width: 64em;
-}
-
-.tech-stack .card-header {
-    background-color: transparent;
-    border-color: var(--border-color);
-}
-
-.tech-stack .card-body {
-    background-color: transparent;
-    overflow-x: auto;
 }
 
 .tech-stack .card-body h6 {
@@ -95,45 +53,11 @@ body {
     font-size: 0.8em;
 }
 
-.tech-stack .list-group-item {
-    color: var(--text-color);
-    background-color: var(--secondary-bg-color);
-    font-size: 0.8em;
-}
-
-/*
-.tech-stack .tech-stack-elem:hover {
-    background-color:var(--secondary-color);
-    color: #fff;
-    text-shadow:
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #0fa,
-        0 0 42px #0fa;
-}
-
-.titel-ts {
-    font-weight: 500;
-    width: 12.7em;
-}
-*/
-
-.info-link{
-    color: var(--text-color);
-    text-decoration: none;
-}
-
 .footer {
     display: none;
     padding: 10px 0;
-    background-color: var(--secondary-background-color);
-    border-top: 1px solid var(--border-color);
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 60px; /* Set the fixed height of the footer here */
-  }
-
-  .footer-txt a, p {
-    color: var(--text-color-alt);
-  }
+}
