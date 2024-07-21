@@ -2,13 +2,38 @@
 
 //https://encycolorpedia.de/f6f3ed
 
-const link = document.createElement('link');
-link.setAttribute('rel', 'stylesheet');
-link.setAttribute('href', 'style/light.css');
+
+function checkDarkMode() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // Dark mode is enabled
+        return true;
+    } else {
+        return false;
+    }
+}
 
 
-document.head.appendChild(link);
+var MODE = checkDarkMode()
+const colors = document.createElement('link');
 
+function changeMode(){
+ 
+    if (MODE) {
+        colors.setAttribute('rel', 'stylesheet');
+        colors.setAttribute('href', 'style/dark.css');
+    }
+    else {
+        colors.setAttribute('rel', 'stylesheet');
+        colors.setAttribute('href', 'style/light.css')
+    }
+    MODE = !MODE;
+    document.head.appendChild(colors);
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    if(MODE != checkDarkMode)changeMode()
+});
+changeMode()
 
 
 // MOVING EYES
@@ -57,14 +82,28 @@ document.addEventListener('mousemove', (event) => {
 
 
 var options = {
+    colors: ['black'],
+    stroke: {
+        width: 0 // this removes the border
+    },
+    markers: {
+        size: 0
+    },
+    fill: {
+        opacity: 0.4,
+        colors: ['#3498db']
+    },
     series: [{
         name: '%',
-        data: [75, 90, 50, 30, 45],
-        
+        data: [75, 90, 50, 30],
+
     }],
     chart: {
-        height: 420,
+        height: 400,
         type: 'radar',
+        toolbar: {
+            show: false
+        }
     },
     title: {
         text: ''
@@ -74,8 +113,21 @@ var options = {
         show: false  // Make sure it’s set to true
     },
     xaxis: {
-        categories: ['Native', 'Backend', 'Web/Frontend', 'Mobile', 'Embeddded']
-    }
+        show: false,
+        categories: ['Native', 'Backend', 'Web/Frontend', 'Mobile']
+    },
+    plotOptions: {
+        radar: {
+            polygons: {
+                width: "1px",
+                strokeColors: 'transparent', // Makes the polygon borders transparent
+                connectorColors: 'white', // Makes connectors transparent
+                fill: {
+                    colors: ['transparent', 'transparent'] // Makes the background transparent
+                }
+            }
+        }
+    },
 };
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);

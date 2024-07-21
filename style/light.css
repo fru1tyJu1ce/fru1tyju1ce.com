@@ -4,12 +4,11 @@
     --primary-color: #3498db;
     --secondary-color: #f6f6f6;
     --background-color: #f6f3ed;
-    --secondary-bg-color: #eeebe5;
+    --secondary-bg-color: #e8e7e0;
     --text-color: #1c1c1c;
     --text-color-alt: #696969;
     --border-color: #0f0f0f82;
 }
-
 body {
     background-color: var(--background-color);
     color: var(--text-color);

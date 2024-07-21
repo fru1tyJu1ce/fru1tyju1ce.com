@@ -15,6 +15,11 @@ body {
     color: var(--text-color);
 }
 
+.i-click{
+    color: var(--text-color);
+    border-width: 0px;
+}
+
 .info-box .list-group-item {
     color: var(--text-color);
     background-color: transparent;
