@@ -1,0 +1,17 @@
+.icon-ionic {
+    background: url(../res/icons/logo-ionic.svg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+
+.icon-pocketbase {
+    background: url(../res/icons/pocketbase_logo_icon_248816.svg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}

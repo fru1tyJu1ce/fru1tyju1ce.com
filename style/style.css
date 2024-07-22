@@ -8,7 +8,9 @@ body {
     font-size: small;
 }
 
-
+.i-click{
+    border-width: 0px;
+}
 
 .usrimg {
     width: 12em;

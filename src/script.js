@@ -1,40 +1,8 @@
-// Load dark/light mode
-
-//https://encycolorpedia.de/f6f3ed
-
-
-function checkDarkMode() {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        // Dark mode is enabled
-        return true;
-    } else {
-        return false;
-    }
-}
-
-
-var MODE = checkDarkMode()
-const colors = document.createElement('link');
-
-function changeMode(){
- 
-    if (MODE) {
-        colors.setAttribute('rel', 'stylesheet');
-        colors.setAttribute('href', 'style/dark.css');
-    }
-    else {
-        colors.setAttribute('rel', 'stylesheet');
-        colors.setAttribute('href', 'style/light.css')
-    }
-    MODE = !MODE;
-    document.head.appendChild(colors);
-}
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-    if(MODE != checkDarkMode)changeMode()
-});
-changeMode()
-
+var MODE = checkDarkMode();
+var TEXTCOLOR;
+const COLORS = document.createElement('link');
+const ICONS = document.createElement('link');
+const MODEICON = document.getElementById('mode-icon');
 
 // MOVING EYES
 
@@ -46,8 +14,8 @@ function checkRelativeCursorPos(x, y) {
     const rect = usrimg.getBoundingClientRect();
     var pos = '';
 
-    /*
-    console.log('x: ' + x + ' y: ' + y)
+    /* 
+    console.log('x: ' + x + ' y: ' + y) // DEBUG
     console.log('r: ' + rect.right + ' l: ' + rect.left)
     console.log('t: ' + rect.top + ' b: ' + rect.bottom)
     */
@@ -80,7 +48,6 @@ document.addEventListener('mousemove', (event) => {
 // CHART
 
 
-
 var options = {
     colors: ['black'],
     stroke: {
@@ -90,8 +57,8 @@ var options = {
         size: 0
     },
     fill: {
-        opacity: 0.4,
-        colors: ['#3498db']
+        opacity: 0.69,
+        colors: ['#0fa']
     },
     series: [{
         name: '%',
@@ -114,14 +81,19 @@ var options = {
     },
     xaxis: {
         show: false,
+        labels: {
+            style: {
+                colors: [TEXTCOLOR, TEXTCOLOR, TEXTCOLOR, TEXTCOLOR],  // Default text color for x-axis labels
+                fontFamily: 'Roboto_Mono'
+            }
+        },
         categories: ['Native', 'Backend', 'Web/Frontend', 'Mobile']
     },
     plotOptions: {
         radar: {
             polygons: {
-                width: "1px",
                 strokeColors: 'transparent', // Makes the polygon borders transparent
-                connectorColors: 'white', // Makes connectors transparent
+                connectorColors: TEXTCOLOR, // Makes connectors transparent
                 fill: {
                     colors: ['transparent', 'transparent'] // Makes the background transparent
                 }
@@ -131,115 +103,78 @@ var options = {
 };
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+
+// Load dark/light mode
+
+//https://encycolorpedia.de/f6f3ed
+
+
+function checkDarkMode() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // Dark mode is enabled
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+function changeMode() {
+
+    if (MODE) {
+        COLORS.setAttribute('rel', 'stylesheet');
+        COLORS.setAttribute('href', 'style/dark.css');
+        ICONS.setAttribute('rel', 'stylesheet');
+        ICONS.setAttribute('href', 'style/dark-icons.css')
+        MODEICON.classList.remove('bx-moon');
+        MODEICON.classList.add('bx-sun');
+        TEXTCOLOR = '#f1f1f1';
+    }
+    else {
+        COLORS.setAttribute('rel', 'stylesheet');
+        COLORS.setAttribute('href', 'style/light.css')
+        ICONS.setAttribute('rel', 'stylesheet');
+        ICONS.setAttribute('href', 'style/light-icons.css')
+        MODEICON.classList.remove('bx-sun');
+        MODEICON.classList.add('bx-moon');
+        TEXTCOLOR = '#1c1c1c';
+    }
+    MODE = !MODE;
+    document.head.appendChild(COLORS);
+    document.head.appendChild(ICONS);
+
+    chart.updateOptions({
+        plotOptions: {
+            radar: {
+                polygons: {
+                    strokeColors: 'transparent',
+                    connectorColors: TEXTCOLOR,
+                    fill: {
+                        colors: ['transparent', 'transparent']
+                    }
+                }
+            }
+        },
+        xaxis: {
+            show: false,
+            labels: {
+                style: {
+                    colors: [TEXTCOLOR, TEXTCOLOR, TEXTCOLOR, TEXTCOLOR]
+                }
+            },
+            categories: ['Native', 'Backend', 'Web/Frontend', 'Mobile']
+        },
+    });
+}
+
+
+
+changeMode();
 chart.render();
 
 
-
-/*
-options = {
-  series: [
-    {
-      name: "Radar Series 1",
-      data: [45, 52, 38, 24, 33, 10]
-    },
-    {
-      name: "Radar Series 2",
-      data: [26, 21, 20, 6, 8, 15]
-    }
-  ],
-  labels: ['April', 'May', 'June', 'July', 'August', 'September']
-}
-*/
-
-
-// TERMINAL 
-
-function typeToterminal(str, delay, textareaId = 'terminal') {
-    let i = 0;
-    const area = document.getElementById(textareaId);
-    if (!area) {
-        console.error('Textarea with specified ID not found.');
-        return;
-    }
-
-    const intervalId = setInterval(() => {
-        if (i < str.length) {
-            area.value += str[i];
-            i++;
-        } else {
-            clearInterval(intervalId);
-        }
-    }, delay);
-}
-
-function typeToterminal(str, delay, textareaId = 'terminal') {
-    let i = 0;
-    const area = document.getElementById(textareaId);
-    if (!area) {
-        console.error('Textarea with specified ID not found.');
-        return;
-    }
-
-    const intervalId = setInterval(() => {
-        if (i < str.length) {
-            area.value += str[i];
-            i++;
-        } else {
-            clearInterval(intervalId);
-        }
-    }, delay);
-}
-
-function renderToterminal(str, delay, textareaId = 'terminal') {
-    let lines = str.split('\n');
-    let currentLine = 0;
-    const area = document.getElementById(textareaId);
-    if (!area) {
-        console.error('Textarea with specified ID not found.');
-        return;
-    }
-
-    const intervalId = setInterval(() => {
-        if (currentLine < lines.length) {
-            area.value += lines[currentLine] + '\n';
-            currentLine++;
-        } else {
-            clearInterval(intervalId);
-        }
-    }, delay);
-}
-
-let neofetchStr =
-    `
-                        'c.          user@crck-mini.local 
-                    ,xNMM.          --------------------- 
-                .OMMMMo           OS: macOS 14.5 23F79 arm64 
-                OMMM0,            Host: Mac14,3 
-        .;loddo:' loolloddol;.      Kernel: 23.5.0 
-    cKMMMMMMMMMMNWMMMMMMMMMM0:    Uptime: 69 days, 4 hours, 19 mins 
-    .KMMMMMMMMMMMMMMMMMMMMMMMWd.    Packages: 48 (brew) 
-    XMMMMMMMMMMMMMMMMMMMMMMMX.      Shell: zsh 5.9 
-    ;MMMMMMMMMMMMMMMMMMMMMMMM:       Resolution: 4096x2304, 4096x2304 
-    :MMMMMMMMMMMMMMMMMMMMMMMM:       DE: Aqua 
-    .MMMMMMMMMMMMMMMMMMMMMMMMX.      WM: Quartz Compositor 
-    kMMMMMMMMMMMMMMMMMMMMMMMMWd.    WM Theme: Blue (Dark) 
-    .XMMMMMMMMMMMMMMMMMMMMMMMMMMk   Terminal: Apple_Terminal 
-    .XMMMMMMMMMMMMMMMMMMMMMMMMK.   Terminal Font: AndaleMono 
-        kMMMMMMMMMMMMMMMMMMMMMMd     CPU: Apple M2 
-        ;KMMMMMMMWXXWMMMMMMMk.      GPU: Apple M2 
-        .cooc,.    .,coo:.        Memory: 1447MiB / 16192MiB
-`
-
-let cpp =
-    `
-    ░▒▓██████▓▒░░▒▓███████▓▒░░▒▓███████▓▒░  
-    ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
-    ░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
-    ░▒▓█▓▒░      ░▒▓███████▓▒░░▒▓███████▓▒░  
-    ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░        
-    ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░        
-    ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░    
-`
-
-//typeToterminal(neofetchStr, 1);
-renderToterminal(cpp, 69);
+// Events
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    if (MODE != checkDarkMode) changeMode()
+});

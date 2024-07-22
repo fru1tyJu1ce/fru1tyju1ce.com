@@ -13,6 +13,9 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
 }
+.i-click{
+    color: var(--text-color);
+}
 
 .info-box .list-group-item {
     color: var(--text-color);
@@ -27,11 +30,6 @@ body {
 
 .tech-stack {
     color: var(--text-color);
-    background-color: transparent;
-    border-color: var(--border-color);
-}
-
-.tech-stack .card-header {
     background-color: transparent;
     border-color: var(--border-color);
 }
