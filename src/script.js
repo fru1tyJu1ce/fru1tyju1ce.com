@@ -1,9 +1,9 @@
 var MODE = checkDarkMode();
 var TEXTCOLOR;
+const STYLE = document.createElement('link');
 const COLORS = document.createElement('link');
 const ICONS = document.createElement('link');
 const MODEICON = document.getElementById('mode-icon');
-
 // MOVING EYES
 
 BASEPATH = './res/img/usrimg/';
@@ -112,7 +112,6 @@ var chart = new ApexCharts(document.querySelector("#chart"), options);
 
 function checkDarkMode() {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        // Dark mode is enabled
         return true;
     } else {
         return false;

@@ -8,7 +8,7 @@ body {
     font-size: small;
 }
 
-.i-click{
+.i-click {
     border-width: 0px;
 }
 
@@ -20,28 +20,6 @@ body {
     min-width: 24em;
     border-width: 0px;
     font-size: 0.88em;
-}
-
-.terminal {
-    display: none;
-    resize: none;
-    font-family: 'Roboto_Mono';
-    text-shadow:
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #0fa,
-        0 0 42px #0fa;
-    font-size: 0.7em;
-    font-weight: lighter;
-    letter-spacing: 0.1em;
-    border-width: 1px;
-    width: 60em;
-    height: 32em;
-    overflow: hidden;
-}
-
-.terminal:focus {
-    outline: none;
 }
 
 .tech-stack {
@@ -61,16 +39,40 @@ body {
     font-size: 0.8em;
 }
 
-.tech-stack .list-group-item i{
-   margin-top: 6px;
+.tech-stack .list-group-item i {
+    margin-top: 6px;
 }
 
+.bottom{
+    height: 5em;
+}
 
 .footer {
     display: none;
-    padding: 10px 0;
-    position: absolute;
+    position: static; 
     bottom: 0;
     width: 100%;
-    height: 60px; /* Set the fixed height of the footer here */
+    height: 60px; 
+}
+
+@media (max-width: 768px) { 
+    .d-flex {
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center;
+        
+    }
+
+    .usrimg {
+        width: 9em;
+    }    
+
+    .info-box, .chart {
+        text-align: center;
+        width: 100%; 
+    }
+
+    .tech-stack{
+        width: 88%;
+    }
 }
