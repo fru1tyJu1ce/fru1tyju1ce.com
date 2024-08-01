@@ -47,7 +47,6 @@ document.addEventListener('mousemove', (event) => {
 
 // CHART
 
-
 var options = {
     colors: ['black'],
     stroke: {
@@ -66,7 +65,7 @@ var options = {
 
     }],
     chart: {
-        height: 400,
+        height: 270,
         type: 'radar',
         toolbar: {
             show: false
@@ -118,7 +117,6 @@ function checkDarkMode() {
     }
 }
 
-
 function changeMode() {
 
     if (MODE) {
@@ -167,11 +165,8 @@ function changeMode() {
     });
 }
 
-
-
-changeMode();
 chart.render();
-
+changeMode();
 
 // Events
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
