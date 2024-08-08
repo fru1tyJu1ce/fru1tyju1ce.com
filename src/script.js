@@ -61,7 +61,7 @@ var options = {
     },
     series: [{
         name: '%',
-        data: [75, 90, 50, 30],
+        data: [85, 45, 65, 70],
 
     }],
     chart: {
@@ -86,7 +86,6 @@ var options = {
                 fontFamily: 'Roboto_Mono'
             }
         },
-        categories: ['Native', 'Backend', 'Web/Frontend', 'Mobile']
     },
     plotOptions: {
         radar: {
@@ -160,7 +159,7 @@ function changeMode() {
                     colors: [TEXTCOLOR, TEXTCOLOR, TEXTCOLOR, TEXTCOLOR]
                 }
             },
-            categories: ['Native', 'Backend', 'Web/Frontend', 'Mobile']
+            categories: ['Native/Backend', 'DevOps', 'Web/Frontend', 'MSC']
         },
     });
 }
