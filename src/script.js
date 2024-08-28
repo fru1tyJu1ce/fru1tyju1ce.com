@@ -61,11 +61,11 @@ var options = {
     },
     series: [{
         name: '%',
-        data: [85, 45, 65, 70],
+        data: [95, 50, 95, 70],
 
     }],
     chart: {
-        height: 270,
+        height: 320,
         type: 'radar',
         toolbar: {
             show: false
@@ -76,24 +76,24 @@ var options = {
     },
     yaxis: {
         stepSize: 100,
-        show: false  // Make sure it’s set to true
+        show: false  
     },
     xaxis: {
         show: false,
         labels: {
             style: {
-                colors: [TEXTCOLOR, TEXTCOLOR, TEXTCOLOR, TEXTCOLOR],  // Default text color for x-axis labels
+                colors: [TEXTCOLOR, TEXTCOLOR, TEXTCOLOR, TEXTCOLOR], 
                 fontFamily: 'Roboto_Mono'
-            }
+            },
         },
     },
     plotOptions: {
         radar: {
             polygons: {
-                strokeColors: 'transparent', // Makes the polygon borders transparent
-                connectorColors: TEXTCOLOR, // Makes connectors transparent
+                strokeColors: 'transparent', 
+                connectorColors: TEXTCOLOR,
                 fill: {
-                    colors: ['transparent', 'transparent'] // Makes the background transparent
+                    colors: ['transparent', 'transparent'] 
                 }
             }
         }
@@ -155,11 +155,13 @@ function changeMode() {
         xaxis: {
             show: false,
             labels: {
+
                 style: {
+
                     colors: [TEXTCOLOR, TEXTCOLOR, TEXTCOLOR, TEXTCOLOR]
                 }
-            },
-            categories: ['Native/Backend', 'DevOps', 'Web/Frontend', 'MSC']
+            },                                                       
+            categories: ['Systems Engineer', 'Manager', 'Software Engineer', 'DevOps E.']
         },
     });
 }
@@ -171,3 +173,8 @@ changeMode();
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     if (MODE != checkDarkMode) changeMode()
 });
+
+
+// Monatsberichte c.a 2 Seiten 
+// 1. Monatsbericht Organigram 
+// keine ich-form, es wurde gemacht ... 

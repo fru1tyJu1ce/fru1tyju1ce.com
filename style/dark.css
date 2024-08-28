@@ -7,7 +7,7 @@
     --secondary-bg-color: #2d2d30;
     --text-color: #f1f1f1;
     --text-color-alt: #bbbbbb;
-    --border-color: #f1f1f182;
+    --border-color: #f1f1f1;
 }
 
 body {
@@ -45,15 +45,16 @@ body {
     background-color: var(--secondary-bg-color);
 }
 
+.about-group .card {
+    color: var(--text-color);
+    background-color: transparent;
+    border-color: var(--border-color);
+}
+
+.about-group .card-body {
+    background-color: transparent;
+}
+
 .info-link {
     color: var(--text-color);
-}
-
-.footer {
-    background-color: var(--secondary-background-color);
-    border-top: 1px solid var(--border-color);
-}
-
-.footer-txt a, p {
-    color: var(--text-color-alt);
 }

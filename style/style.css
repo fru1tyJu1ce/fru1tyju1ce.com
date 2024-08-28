@@ -3,7 +3,14 @@
     src: url('../res/fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf') format('truetype');
 }
 
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
 body {
+    height: 100%;
+    overflow: auto;
     font-family: 'Roboto_Mono', sans-serif;
     font-size: small;
 }
@@ -43,8 +50,50 @@ body {
     margin-top: 6px;
 }
 
+.cv-data{
+    width: 500px;
+}
+
+.cv-data-item{
+    background-color: transparent;
+    border: none;
+}
+
+.about-group{
+    max-width: 54em;
+}
+
+.about-group .card{
+   border: none;
+}
+
+.about-group .card-body h5 {
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.about-group .card-body h6 {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.about-group .card-body p {
+    font-size: 0.9em;
+    text-align: justify;
+}
+
+.about-group .list-group-item {
+    font-size: 0.8em;
+}
+
+.about-group.list-group-item i {
+    margin-top: 6px;
+}
+
 .bottom{
-    height: 5em;
+    border-width: 0px;
+    height: 7em;
+    font-size: 0.2em;
 }
 
 .footer {
@@ -60,7 +109,10 @@ body {
         flex-direction: column; 
         align-items: center; 
         justify-content: center;
-        
+    }
+
+    .about-group{
+        width: 75%;
     }
 
     .usrimg {
@@ -72,7 +124,7 @@ body {
         width: 100%; 
     }
 
-    .tech-stack{
+    .tech-stack, .about-group{
         width: 75%;
     }
 }
