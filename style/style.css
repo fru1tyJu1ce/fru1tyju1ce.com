@@ -93,15 +93,7 @@ body {
 .bottom{
     border-width: 0px;
     height: 7em;
-    font-size: 0.2em;
-}
-
-.footer {
-    display: none;
-    position: static; 
-    bottom: 0;
-    width: 100%;
-    height: 60px; 
+    font-size: 0.7em;
 }
 
 @media (max-width: 768px) { 
