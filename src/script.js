@@ -5,18 +5,18 @@ const STYLE = document.createElement('link');
 const COLORS = document.createElement('link');
 const ICONS = document.createElement('link');
 const MODEICON = document.getElementById('mode-icon');
+
 // MOVING EYES
-
 BASEPATH = './res/img/usrimg/';
-
 
 function checkRelativeCursorPos(x, y) {
   const usrimg = document.getElementById('usrimg');
   const rect = usrimg.getBoundingClientRect();
   var pos = '';
 
+  // DEBUG 
   /* 
-  console.log('x: ' + x + ' y: ' + y) // DEBUG
+  console.log('x: ' + x + ' y: ' + y)
   console.log('r: ' + rect.right + ' l: ' + rect.left)
   console.log('t: ' + rect.top + ' b: ' + rect.bottom)
   */
@@ -62,14 +62,14 @@ var options = {
     data: [100, 50, 85],
   }],
   chart: {
-    height: 320,
+    height: 300,
     type: 'radar',
     toolbar: {
       show: false
     },
   },
   tooltip: {
-    enabled: false  // Disables tooltips on hover
+    enabled: false
   },
   title: {
     text: ''
@@ -149,9 +149,9 @@ function changeMode() {
       strokeWidth: 0, 
       colors: [BACKROUNDCOLOR],
       hover: {
-        size: undefined,  // Disables size change on hover
+        size: undefined,  
         filter: {
-          type: 'none',    // Disables filter effects on hover
+          type: 'none',
         }
       }
     },

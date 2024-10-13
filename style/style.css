@@ -23,6 +23,10 @@ body {
     width: 12em;
 }
 
+.chart {
+    margin-top: 10%;
+}
+
 .info-box .list-group-item {
     min-width: 24em;
     border-width: 0px;
@@ -114,6 +118,10 @@ body {
     .info-box, .chart {
         text-align: center;
         width: 100%; 
+    }
+
+    .chart {
+        margin-left: 10%;
     }
 
     .tech-stack, .about-group{
