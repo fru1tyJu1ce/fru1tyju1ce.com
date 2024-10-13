@@ -14,12 +14,6 @@ function checkRelativeCursorPos(x, y) {
   const rect = usrimg.getBoundingClientRect();
   var pos = '';
 
-  // DEBUG 
-  /* 
-  console.log('x: ' + x + ' y: ' + y)
-  console.log('r: ' + rect.right + ' l: ' + rect.left)
-  console.log('t: ' + rect.top + ' b: ' + rect.bottom)
-  */
 
   if (x < rect.right - (rect.width / 3) && x > rect.left + (rect.width / 3) && y > rect.top + (rect.height / 3) && y < rect.bottom - (rect.width / 3)) {
     return 'ZZ';
@@ -100,14 +94,9 @@ var options = {
   },
 };
 
-
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 
-
 // Load dark/light mode
-
-//https://encycolorpedia.de/f6f3ed
-
 
 function checkDarkMode() {
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -187,8 +176,3 @@ changeMode();
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
   if (MODE != checkDarkMode) changeMode()
 });
-
-
-// Monatsberichte c.a 2 Seiten 
-// 1. Monatsbericht Organigram 
-// keine ich-form, es wurde gemacht ... 
