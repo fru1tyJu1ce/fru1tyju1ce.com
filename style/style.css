@@ -15,6 +15,10 @@ body {
     font-size: small;
 }
 
+.top-left-logo{
+    width: 42px;
+}
+
 .i-click {
     border-width: 0px;
 }
