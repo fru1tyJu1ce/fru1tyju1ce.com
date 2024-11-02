@@ -8,6 +8,7 @@
     --text-color: #f1f1f1;
     --text-color-alt: #bbbbbb;
     --border-color: #f1f1f1;
+    --border-color-dark: #3e3e42;
 }
 
 body {
@@ -57,4 +58,8 @@ body {
 
 .info-link {
     color: var(--text-color);
+}
+
+.bottom{
+   border-color: var(--border-color-dark);
 }

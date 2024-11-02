@@ -99,9 +99,9 @@ body {
 }
 
 .bottom{
-    border-width: 0px;
-    height: 7em;
+    height: 4.7em;
     font-size: 0.7em;
+    border-top: 1px solid; /* Adds only a top border in yellow */
 }
 
 @media (max-width: 768px) { 
